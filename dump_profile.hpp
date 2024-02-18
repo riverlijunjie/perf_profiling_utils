@@ -17,6 +17,12 @@ private:
 
 #define MY_PROFILE(NAME) MyProfile(NAME + std::string(":") + std::to_string(__LINE__))
 #define MY_PROFILE_ARGS(NAME, ...) MyProfile(NAME + std::string(":") + std::to_string(__LINE__), __VA_ARGS__)
+
+#define SIMPLE_PROFILE(NAME) \
+        auto p = MyProfile(NAME + std::string(":") + std::to_string(__LINE__));
+
+// #define SIMPLE_PROFILE(NAME)
+
 // Example 1: MY_PROFILE / MY_PROFILE_ARGS
 /******************************************************
 auto p = MY_PROFILE("fun_name")
